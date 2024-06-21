@@ -1,21 +1,24 @@
 const API_KEY = '0ac2dd6e01833f7f8b1c57b368edaf18'; // Replace with your TMDb API key
-const API_URL = 'https://api.themoviedb.org/3/search/movie';
+const API_URL = 'https://api.themoviedb.org/3/movie/popular';
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+const limit = 20;
 
 function searchMovies() {
-    const query = document.getElementById('searchInput').value;
-    if (query) {
-        fetch(`${API_URL}?api_key=${API_KEY}&query=${encodeURIComponent(query)}`)
-            .then(response => response.json())
-            .then(data => displayMovies(data.results))
-            .catch(error => console.error('Error:', error));
-    }
+    fetch(`${API_URL}?api_key=${API_KEY}&language=en-US&page=1`)
+        .then(response => response.json())
+        .then(data => {
+            // Limit the results to the first 20 movies
+            const limitedMovies = data.results.slice(0, limit);
+            displayMovies(limitedMovies);
+        })
+        .catch(error => console.error('Error:', error));
 }
 
 function displayMovies(movies) {
     const moviesContainer = document.getElementById('moviesContainer');
     moviesContainer.innerHTML = '';
 
+    console.log(movies);
     if (movies.length === 0) {
         moviesContainer.innerHTML = '<p>No movies found.</p>';
         return;
@@ -45,3 +48,5 @@ function displayMovies(movies) {
         moviesContainer.appendChild(movieElement);
     });
 }
+
+searchMovies();
