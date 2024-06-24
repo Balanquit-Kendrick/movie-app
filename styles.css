@@ -1,11 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  display: flex;
 }
 
 .container {
@@ -36,21 +33,26 @@ button {
 button:hover {
   background-color: #218838;
 }
+#movieElement {
+  margin-top: 20px;
+  max-width: 800px;
+}
 
 #moviesContainer {
   margin-top: 20px;
+  width:auto;
 }
 
 .movie {
   display: flex;
   align-items: center;
+  
   margin-bottom: 20px;
 }
 
 .movie img {
   width: 100px;
   height: 150px;
-  margin-right: 20px;
   border-radius: 10px;
 }
 
