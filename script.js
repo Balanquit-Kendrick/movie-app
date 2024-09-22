@@ -17,6 +17,8 @@ function fetchMovies() {
             // Combining movies from both pages
             const allMovies = results.flatMap(result => result.results);
             const limitedMovies = allMovies.slice(0, limit); // Limit to 40 movies
+            console.log('limitedMovies', limitedMovies);
+            
             displayMovies(limitedMovies);
         })
         .catch(error => console.error('Error:', error));
@@ -37,11 +39,17 @@ function displayMovies(movies) {
 
         const moviePoster = document.createElement('img');
         moviePoster.src = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : 'https://via.placeholder.com/100x150';
-
+        console.log('moviePoster.src', moviePoster.src);
+        
         movieElement.appendChild(moviePoster);
         moviesContainer.className = 'grid grid-cols-8';
         moviesContainer.appendChild(movieElement);
     });
 }
+
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+ }
 
 fetchMovies();

@@ -5,6 +5,11 @@ body {
   display: flex;
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
 .container {
   background-color: white;
   padding: 20px;
