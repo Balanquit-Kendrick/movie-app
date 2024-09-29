@@ -34,15 +34,12 @@ function displayMovies(movies) {
     }
 
     movies.forEach(movie => {
-        const movieElement = document.createElement('div');
-        movieElement.className = 'slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px]';
 
         const moviePoster = document.createElement('img');
+        moviePoster.className = 'slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg';
         moviePoster.src = movie.poster_path ? `${IMAGE_URL}${movie.poster_path}` : 'https://via.placeholder.com/100x150';
         
-        movieElement.appendChild(moviePoster);
-        moviesContainer.className = 'grid grid-cols-8 ';
-        moviesContainer.appendChild(movieElement);
+        moviesContainer.appendChild(moviePoster);
     });
 }
 fetchMovies();
