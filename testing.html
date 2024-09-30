@@ -32,7 +32,13 @@
             </div>
 
             <div class="flex border border-black content-center place-content-center" >
-                <div class="flex slider-nav m-2 border border-black h-[200] w-[1000px] " id="moviesContainer" >
+                <div class="flex slider-nav m-2 border border-black h-[200] w-[1000px]" id="">
+                    <img src="/assets/1.jpg" class="slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg"/>
+                    <img src="/assets/2.jpg" class="slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg"/>
+                    <img src="/assets/3.jpg" class="slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg"/>
+                    <img src="/assets/4.jpg" class="slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg"/>
+                    <img src="/assets/5.jpg" class="slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg"/>
+                    <img src="/assets/6.jpg" class="slider-nav box bg-slate-300 align-text m-2 content-center text-center mx-5 w-[100px] rounded-lg"/>
                     
                 </div>
             </div>
@@ -44,7 +50,6 @@
         // Loop through each .box in .slider-nav and create corresponding .slider-for slides
         $('.slider-nav .box').each(function() {
             var slideContent = $(this).text(); // Get the text from .box
-            console.log('slideContent', slideContent);
 
             $('.slider-for').append('<div>' + slideContent + '</div>'); // Create and append slides
         });

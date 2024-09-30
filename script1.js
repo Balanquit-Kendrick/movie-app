@@ -32,7 +32,8 @@ function displayMovies(movies) {
         moviesContainer.innerHTML = '<p>No movies found.</p>';
         return;
     }
-
+    console.log('movies:', movies);
+    
     movies.forEach(movie => {
 
         const moviePoster = document.createElement('img');
